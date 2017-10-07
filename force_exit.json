@@ -1,0 +1,32 @@
+{
+    "title": "kani",
+    "rules": [
+        {   
+            "description": "force exit key",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "grave_accent_and_tilde"
+                    },
+                    "to": [
+                        {
+                            "key_code": "c",
+                            "modifiers": [
+                                    "left_control"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.Terminal"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
