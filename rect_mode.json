@@ -1,0 +1,41 @@
+{
+    "title": "kani",
+    "rules": [
+        {
+            "description": "rect mode on vim",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "v",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command",
+                                "left_shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "v",
+                            "modifiers": [
+                                    "left_control"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.Terminal"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
